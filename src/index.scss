@@ -1,0 +1,44 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.b-flex {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.b-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  display: none;
+  background-color: rgba(0,0,0,.2);
+}
+
+.modal-s {
+  display: block;
+  opacity: 1;
+}
+
+.card-w {
+  max-width: 550px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}

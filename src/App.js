@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+
+import {Navbar} from './components/Navbar'
+import {Home} from './pages/Home'
+import {MoreDetails} from './components/MoreDetails'
+import {DateState} from './context/date/DateState'
+import {FirebaseState} from './context/firebase/FirebaseState'
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FirebaseState>
+      <DateState>
+        <BrowserRouter>
+          <Navbar />
+          <div className="container pt-4">
+            <Switch>
+              <Route path={'/'} exact component={Home} />
+
+              <Route path='/details/:id' render={(matchProps) =>
+                <MoreDetails
+                  {...matchProps}
+                />
+              }/>
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </DateState>
+    </FirebaseState>
   );
 }
 
